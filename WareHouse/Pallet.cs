@@ -29,16 +29,13 @@ public class Pallet : Container
     public ReadOnlyCollection<Box> Boxes { get; }
     private readonly List<Box> boxesList = [];
 
-    public event EventHandler? PalletChanged;
-
     public bool TryAddBox(Box box)
     {
-        if (box.Width > Width || box.Width > Depth)
+        if (box.Width > Width || box.Depth > Depth)
         {
             return false;
         }
         boxesList.Add(box);
-        PalletChanged?.Invoke(this, EventArgs.Empty);
         return true;
     }
 
@@ -46,7 +43,6 @@ public class Pallet : Container
     {
         if (boxesList.Remove(box))
         {
-            PalletChanged?.Invoke(this, EventArgs.Empty);
             return true;
         }
         return false;

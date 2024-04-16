@@ -9,7 +9,7 @@ public abstract class Container
     /// <summary>Ширина контейнера.</summary>
     public double Width { get; init; }
 
-    /// <summary>Длина контейнера.</summary>
+    /// <summary>Глубина контейнера.</summary>
     public double Depth { get; init; }
 
     /// <summary>Высота контейнера.</summary>
